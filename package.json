@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "escodegen": "^1.12.0",
+    "esprima": "^4.0.1",
+    "estraverse": "^4.3.0"
+  },
+  "dependencies": {
+    "yarn": "^1.21.0"
+  }
+}

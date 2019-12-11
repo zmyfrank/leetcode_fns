@@ -81,19 +81,23 @@ function deepTraversal (source, goal) {
 
   function searchDeep (value, parent) {
     console.log(value.value)
+    // 添加parent，方便追踪
     if (parent) {
       value.parent = parent
     }
+    // 找到目标则通过parent找到所有的目标
     if (value.value === goal) {
       findParent(value)
       return result
     }
+    // 没有找到到，就递归调用，继续查找
     const childData = value.children
     if (childData && childData.length > 0) {
       return childData.some(childData => searchDeep(childData, value))
     }
   }
 
+  // some方法碰到返回为true的时候会自动停止
   deepSource.some(deepValue => searchDeep(deepValue))
 
   return result
